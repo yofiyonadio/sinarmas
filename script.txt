@@ -1,4 +1,4 @@
-//Soal 1
+    //Soal 1
     function intRange1(firt, end) {
         let arr = []
         for (let i = firt; i <= end; i++) {
