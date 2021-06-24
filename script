@@ -1,0 +1,44 @@
+//Soal 1
+    function intRange1(firt, end) {
+        let arr = []
+        for (let i = firt; i <= end; i++) {
+            let split = String(i).split("")
+            let isDouble = false;
+            let isDecrease = false;
+            let iTemp = 0;
+            for (let ii of split) {
+                if (!isDouble || !isDecrease) {
+                    let includes = split.filter(i => i.includes(parseInt(ii)))
+                    includes.length > 1 ? isDouble = true : null;
+                    parseInt(ii) >= iTemp ? null : isDecrease = true;
+                }
+                iTemp = parseInt(ii);
+            }
+            (isDouble === true && isDecrease === false) ? arr.push(i) : null;
+        }
+        return arr.length
+    }
+
+    //Soal 2
+    function intRange2(firt, end) {
+        let arr = []
+        for (let i = firt; i <= end; i++) {
+            let split = String(i).split("")
+            let isDouble = false;
+            let isDecrease = false;
+            let iTemp = 0;
+            for (let ii of split) {
+                if (!isDouble || !isDecrease) {
+                    let includes = split.filter(i => i.includes(parseInt(ii)))
+                    includes.length === 2 ? isDouble = true : null;
+                    parseInt(ii) >= iTemp ? null : isDecrease = true;
+                }
+                iTemp = parseInt(ii);
+            }
+            (isDouble === true && isDecrease === false) ? arr.push(i) : null;
+        }
+        return arr.length
+    }
+
+    //var hasil = intRange1(273025, 767253);
+    var hasil = intRange2(273025, 767253);
